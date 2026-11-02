@@ -1,37 +1,52 @@
+import auxiliar
+
+
+def bucleLista():
+    listaNums = []
+    while True:
+        numIntroducido = input()
+        if numIntroducido == "=":
+            break
+        elif auxiliar.esNumero(numIntroducido):
+            listaNums.append(float(numIntroducido))
+        else:
+            print("Operación cancelada: El número introducido no es válido.")
+            break
+
+        return listaNums
+
+
 def sumar():
-    valor1 = input("Introduce el primer valor: ")
-    valor2 = input("Introduce el segundo valor: ")
-    try:
-        valor1 = float(valor1)
-        valor2 = float(valor2)
-        resultado = valor1 + valor2
-        print("Resultado de la suma: ", resultado)
-    except ValueError:
-        print("No es un número.")
+    print("Ingrese los números que quiere sumar: ")
+    listaNums = bucleLista()
+
+    total = listaNums[0]
+    for x in listaNums:
+        total = total + x
+
+        print("Total de la suma de números: ", total)
 
 
 def restar():
-    valor1 = input("Introduce el primer valor: ")
-    valor2 = input("Introduce el segundo valor: ")
-    try:
-        valor1 = float(valor1)
-        valor2 = float(valor2)
-        resultado = valor1 - valor2
-        print("Resultado de la resta: ", resultado)
-    except ValueError:
-        print("No es un número.")
+    print("Ingrese los números que quiere restar: ")
+    listaNums = bucleLista()
+
+    total = 0
+    for x in listaNums:
+        total - x
+
+        print("Total de la suma de números: ", total)
 
 
 def multipicar():
-    valor1 = input("Introduce el primer valor: ")
-    valor2 = input("Introduce el segundo valor: ")
-    try:
-        valor1 = float(valor1)
-        valor2 = float(valor2)
-        resultado = valor1 * valor2
-        print("Resultado de la multiplicación: ", resultado)
-    except ValueError:
-        print("No es un número.")
+    print("Ingrese los números que quiere sumar: ")
+    listaNums = bucleLista()
+
+    total = listaNums[0]
+    for x in listaNums:
+        total = total * x
+
+        print("Total de la suma de números: ", total)
 
 
 def dividir():

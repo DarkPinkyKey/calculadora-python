@@ -1,2 +1,6 @@
 def esNumero(num):
-    if (num) 
+    try:
+        num = float(num)
+        return True
+    except ValueError:
+        return False
