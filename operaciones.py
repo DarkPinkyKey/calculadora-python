@@ -5,7 +5,7 @@ def bucleLista():
     listaNums = []
     while True:
         numIntroducido = input()
-        if numIntroducido == "=":
+        if numIntroducido == "=" or numIntroducido == "":
             break
         elif auxiliar.esNumero(numIntroducido):
             listaNums.append(float(numIntroducido))
@@ -37,7 +37,7 @@ def resultadoOperacion(num, lista):
             case 4:  # División
                 if x == 0:
                     print("No se puede dividir entre 0")
-                    break
+                    return None
                 else:
                     total = total / x
             case _:
@@ -51,7 +51,6 @@ def sumar():
     listaNums = bucleLista()
 
     total = resultadoOperacion(1, listaNums)
-
     print("Total de la suma de números: ", total)
 
 
@@ -79,4 +78,5 @@ def dividir():
 
     total = resultadoOperacion(4, listaNums)
 
-    print("Total de la división de números: ", total)
+    if total != None:
+        print("Total de la división de números: ", total)
